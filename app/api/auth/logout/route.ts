@@ -6,10 +6,7 @@ export const GET = (req: NextRequest) => {
 
     response.cookies.delete("token");
 
-    return NextResponse.json({
-      success: true,
-      message: "유저 로그아웃 성공",
-    });
+    return response;
   } catch (error) {
     console.log(error);
     return NextResponse.json({
