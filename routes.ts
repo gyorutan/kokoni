@@ -20,4 +20,4 @@ export const apiAuthPrefix = "/api/auth";
  * 로그인 후 이동하는 페이지
  * @type {string}
  */
-export const DEFAULT_LOGIN_REDIRECT = "/profile";
+export const DEFAULT_LOGIN_REDIRECT = "/main";

@@ -3,6 +3,10 @@ import bcrypt from "bcryptjs";
 import { db } from "@/lib/db";
 import jwt from "jsonwebtoken";
 
+export interface Payload {
+  id: string;
+}
+
 export const POST = async (req: NextRequest) => {
   const body = await req.json();
   const { email, password } = body;
@@ -28,10 +32,8 @@ export const POST = async (req: NextRequest) => {
       });
     }
 
-    const jwtPayload = {
+    const jwtPayload: Payload = {
       id: existingUser.id,
-      name: existingUser.name,
-      email: existingUser.email,
     };
 
     const token = jwt.sign(jwtPayload, process.env.JWT_SECRET!, {
