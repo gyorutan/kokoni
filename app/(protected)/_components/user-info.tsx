@@ -7,21 +7,21 @@ import toast from "react-hot-toast";
 
 export const UserInfo = () => {
   const router = useRouter();
-  const onClick = async () => {
-    await axios.get("/api/auth/logout").then((response) => {
-      if (response.data.success) {
-        toast.success(response.data.message);
-        router.push("/auth/login");
-      } else {
-        toast.error(response.data.message);
-      }
-    });
+  const logout = () => {
+    try {
+      axios.get("/api/auth/logout");
+      toast.success("유저 로그아웃 성공");
+      router.push("/");
+    } catch (error) {
+      console.log(error);
+      toast.error("에러가 발생하였습니다");
+    }
   };
 
   return (
     <div className="flex flex-col gap-y-4 justify-center items-center">
       <p className="text-2xl font-bold">유저 정보 페이지</p>
-      <Button onClick={onClick} variant={"destructive"} size={"lg"}>
+      <Button onClick={logout} variant={"destructive"} size={"lg"}>
         로그아웃
       </Button>
     </div>
