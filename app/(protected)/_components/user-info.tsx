@@ -7,9 +7,9 @@ import toast from "react-hot-toast";
 
 export const UserInfo = () => {
   const router = useRouter();
-  const logout = () => {
+  const logout = async () => {
     try {
-      axios.get("/api/auth/logout");
+      await axios.get("/api/auth/logout");
       toast.success("유저 로그아웃 성공");
       router.push("/");
     } catch (error) {
