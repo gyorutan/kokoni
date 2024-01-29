@@ -1,13 +1,16 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-export const GET = (req: NextRequest) => {
+export const GET = () => {
   try {
     const response = NextResponse.json({
       success: true,
       message: "유저 로그아웃 성공",
     });
 
-    response.cookies.delete("token");
+    response.cookies.set("token", "", {
+      httpOnly: true,
+      expires: new Date(0),
+    });
 
     return response;
   } catch (error) {
