@@ -7,8 +7,10 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export const SignupForm = () => {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -23,6 +25,7 @@ export const SignupForm = () => {
       await axios.post("/api/auth/signup", formData).then((response) => {
         if (response.data.success) {
           toast.success(response.data.message);
+          router.push("/auth/login");
         } else {
           toast.error(response.data.message);
         }
