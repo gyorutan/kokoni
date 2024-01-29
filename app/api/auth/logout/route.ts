@@ -2,14 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const GET = (req: NextRequest) => {
   try {
-    const response = NextResponse.json({
+    let response = NextResponse.next();
+
+    response.cookies.delete("token");
+
+    return NextResponse.json({
       success: true,
       message: "유저 로그아웃 성공",
     });
-
-    response.cookies.set("token", "", { httpOnly: true });
-
-    return response;
   } catch (error) {
     console.log(error);
     return NextResponse.json({
