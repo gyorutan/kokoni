@@ -25,11 +25,11 @@ export const UserButton = () => {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40" align="end">
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem asChild className="cursor-pointer">
           <Link href={"/profile"}>내 프로필</Link>
         </DropdownMenuItem>
         <LogoutButton>
-          <DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer">
             <ExitIcon className="h-4 w-4 mr-2" />
             로그아웃
           </DropdownMenuItem>

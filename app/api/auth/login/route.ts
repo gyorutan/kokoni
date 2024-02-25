@@ -42,7 +42,7 @@ export const POST = async (req: NextRequest) => {
 
     const response = NextResponse.json({
       success: true,
-      message: "유저 로그인 성공",
+      message: "로그인되었습니다",
     });
 
     response.cookies.set("token", token, {

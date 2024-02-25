@@ -28,28 +28,28 @@ export const Footbar = () => {
         <Button
           className="w-full"
           asChild
-          variant={pathname === "/main" ? "default" : "outline"}
+          variant={pathname === "/main" ? "blue" : "outline"}
         >
-          <Link href={"/main"}>홈</Link>
+          <Link href={"/main"}>메인</Link>
         </Button>
         <Button
           className="w-full"
           asChild
-          variant={pathname === "/post/create" ? "default" : "outline"}
+          variant={pathname === "/post/create" ? "blue" : "outline"}
         >
           <Link href={"/post/create"}>글쓰기</Link>
         </Button>
         <Button
           className="w-full"
           asChild
-          variant={pathname === "/notification" ? "default" : "outline"}
+          variant={pathname === "/notification" ? "blue" : "outline"}
         >
           <Link href={"/notification"}>알림</Link>
         </Button>
         <Button
           className="w-full"
           asChild
-          variant={pathname === "/settings" ? "default" : "outline"}
+          variant={pathname === "/settings" ? "blue" : "outline"}
         >
           <Link href={"/settings"}>설정</Link>
         </Button>

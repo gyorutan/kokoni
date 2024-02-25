@@ -4,7 +4,7 @@ export const GET = (req: NextRequest) => {
   try {
     let response = NextResponse.json({
       success: true,
-      message: "유저 로그아웃 성공",
+      message: "로그아웃되었습니다",
     });
 
     response.cookies.set("token", "", {

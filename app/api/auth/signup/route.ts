@@ -32,7 +32,7 @@ export const POST = async (req: NextRequest) => {
 
     return NextResponse.json({
       success: true,
-      message: "유저가 생성되었습니다",
+      message: "회원가입되었습니다",
     });
   } catch (error) {
     console.log(error);
