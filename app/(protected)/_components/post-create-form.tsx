@@ -82,7 +82,7 @@ export const PostCreateForm = () => {
       });
     } catch (error) {
       console.log(error);
-      toast.error("글을 게시하는데 실패하였습니다");
+      toast.error("글을 게시하는데 실패하였습니다!");
     }
   };
 
